@@ -2,8 +2,9 @@ QUANT-NET Controller
 ####################
 
 
-.. image:: https://img.shields.io/pypi/v/quantnet_controller.svg
-        :target: https://pypi.python.org/pypi/quantnet_controller
+.. pypi-shield::
+    :project: quantnet-server
+    :version:
 
 
 .. github-shield::

@@ -30,6 +30,24 @@ Source Code Repositories
 Python packages via PyPI
 ------------------------
 
+    |qn-server-py| `qn-server`
+    
+    |qn-agent-py| `qn-agent`
+
+    |qn-mq-py| `qn-mq`
+
+.. |qn-server-py| pypi-shield::
+    :project: quantnet-server
+    :version:
+
+.. |qn-agent-py| pypi-shield::
+    :project: quantnet-agent
+    :version:
+
+.. |qn-mq-py| pypi-shield::
+    :project: quantnet-mq
+    :version:
+
 Follow these steps to install each quant-net package that are availabe on public Python Package Index(PyPI):
 
 Step 1: Ensure pip is Updated
@@ -42,16 +60,16 @@ Step 2: Install the Package
 
 Run the following command to install the package, e.g.::
 
-	pip install quant-net-server quant-net-agent quant-net-mq
+	pip install quantnet-mq quantnet-agent quantnet-server
 
 Step 3: Install Specific versions (Optional)
 
 To install a specific version, use the following syntax::
 
-	pip install quant-net-mq==1.0.0
+	pip install quantnet-mq==1.0.0
 
 Step 4: Verfiy Installation
 
 After installation, verify the package::
 
-	pip show quant-net-mq
+	pip show quantnet-mq
