@@ -18,9 +18,7 @@ jobs:
         run: |
           make html
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: actions/upload-pages-artifact@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/gh-pages' }}
         with:
-          publish_branch: gh-pages
-          publish_dir: _build/html
-          force_orphan: true
+          path: _build/html
