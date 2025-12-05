@@ -13,17 +13,17 @@ Before you begin, ensure the following:
 Docker Environment
 ------------------------------------
 
-Clone the ``quant-net-docker`` repository::
+Clone the ``qn-docker`` repository::
 
-	git clone git@github.com:quant-net/quant-net-docker.git
+	git clone git@github.com:quant-net/qn-docker.git
 
-The ``quant-net-docker`` repository contains the docker compose file, Dockerfile, and example configuration files for the Controller and Agent components of the QUANT-NET control plane.
+The ``qn-docker`` repository contains the docker compose file, Dockerfile, and example configuration files for the Controller and Agent components of the QUANT-NET control plane.
 
-* ``quant-net-server``: the QNCP Controller
-* ``quant-net-agent``: the QNCP Agents
+* ``qn-server``: the QNCP Controller
+* ``qn-agent``: the QNCP Agents
 
-.. * ``quant-net-api``: the API service for user interface
-.. * ``quant-net-sim``: the simulation framework
+.. * ``qn-api``: the API service for user interface
+.. * ``qn-sim``: the simulation framework
 
 
 Starting services
@@ -48,7 +48,7 @@ Use bind mounts to sync local source code with the container. Changes to your lo
 .. code-block:: yaml
 
 	volumes:
-            - ./conf/quantnet.cfg:/quantnet-controller/etc/quantnet.cfg
+            - ./conf:/opt/quantnet/etc
 
 * Environment Variables
 
@@ -57,7 +57,7 @@ Set environment-specific variables in the docker-compose.yml file or in a separa
 .. code-block:: yaml
 
 	environment:
-            - QUANTNET_HOME=/quantnet-controller
+            - QUANTNET_HOME=/opt/quantnet
       
 
 Commands for Development
