@@ -182,7 +182,7 @@ Now that we have a complete schema definition, we can begin to implement the pro
             )
 
 
-The Controller plugin imports a `PingPonger <https://github.com/quant-net/qn-plugins/blob/main/pingpong/pingpong/pingponger.py>`_ class that implements the ping-pong protocol logic and record management. Whenever a Controller with this plugin loaded receives a ``pingPongRequest`` it will invoke the ``handle_pingpong()`` method to begin the ping-pong protocol. The plugin also registers a ``ping`` command as a valid RPC call conforming to the specified ping-pong protocol schema.
+The Controller plugin imports a `PingPonger <https://github.com/quant-net/qn-plugins/blob/main/plugins/pingpong/pingpong/pingponger.py>`_ class that implements the ping-pong protocol logic and record management. Whenever a Controller with this plugin loaded receives a ``pingPongRequest`` it will invoke the ``handle_pingpong()`` method to begin the ping-pong protocol. The plugin also registers a ``ping`` command as a valid RPC call conforming to the specified ping-pong protocol schema.
 
 Agent Command Interpreter
 -------------------------
