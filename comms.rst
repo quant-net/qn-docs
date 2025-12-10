@@ -85,7 +85,7 @@ With user-defined protocol plugins, it may often be necessary to dynamically loa
         # use namespaced objects ...
 
 
-There is special handling for schema definitions that reference ``objects.yaml``.  This core schema packaged with ``quantnet_mq`` provides a set of common object types, including RPC response and Status formats, that may be useful. The source `schema file <https://github.com/quant-net/quant-net-mq/blob/develop/quantnet_mq/schema/objects/objects.yaml>`_ contains further details.
+There is special handling for schema definitions that reference ``objects.yaml``.  This core schema packaged with ``quantnet_mq`` provides a set of common object types, including RPC response and Status formats, that may be useful. The source `schema file <https://github.com/quant-net/qn-mq/blob/main/quantnet_mq/schema/objects/objects.yaml>`_ contains further details.
 
 For example, a user-defined schema may contain a reference of the form:
 

@@ -37,10 +37,10 @@ Example: ::
   default = mongodb://localhost:27017
 
   [plugins]
-  path=/opt/quant-net-tutorials
+  path=/opt/qn-plugins
 
   [schemas]
-  path=/opt/quant-net-tutorials/schema
+  path=/opt/qn-plugins/schema
 
   [scheduling]
   name=BatchScheduler

@@ -54,7 +54,7 @@ plane integrations to implement this functionality:
 * Create a test client to make ``egpRequest`` calls and display results.
 
 The complete EGP tutorial source code may be found `here
-<https://github.com/quant-net/quant-net-tutorials/blob/main/egp>`_.
+<https://github.com/quant-net/qn-plugins/blob/main/plugins/egp>`_.
 
 Experiment Definition
 ----------------------
@@ -175,11 +175,11 @@ fail.
               type: number
 
 Two other protocols are already built-in and are not required for a user
-plugin. They may be found in the quant-net-mq YAML files located within the
+plugin. They may be found in the quantnet_mq YAML files located within the
 `scheduler.yaml
-<https://github.com/quant-net/quant-net-mq/blob/main/schema/rpc/scheduler.yaml>`_
+<https://github.com/quant-net/qn-mq/blob/main/quantnet_mq/schema/rpc/scheduler.yaml>`_
 and `experiment.yaml
-<https://github.com/quant-net/quant-net-mq/blob/main/schema/rpc/experiment.yaml>`_
+<https://github.com/quant-net/qn-mq/blob/main/quantnet_mq/schema/rpc/experiment.yaml>`_
 under the schema/rpc sub-directory.
 
 

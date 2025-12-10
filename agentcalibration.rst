@@ -241,8 +241,8 @@ calibration tasks:
     scheduler                     build-in interpreters         scheduler.py
     calibration                   build-in interpreters         calibration.py
     experiment                    build-in interpreters         exp_framework.py
-    laser_frequency_calibration     task                        quant-net-agent/config/
-    laser_attenuation_calibration   task                        quant-net-agent/config/
+    laser_frequency_calibration     task                        qn-agent/config/
+    laser_attenuation_calibration   task                        qn-agent/config/
 
     2025-12-02 13:01:48,091 quantnet_agent.hal.local_task_manager 63525     INFO Adding dependency in DAG
     2025-12-02 13:01:48,091 quantnet_agent.hal.local_task_manager 63525    DEBUG Adding dependency from 0 to Frequency Calibration

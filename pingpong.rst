@@ -30,7 +30,7 @@ With the requirements stated, you will exercise the following control plane inte
 * Create a CommandInterpreter for the Agent that responds to pings from the Controller.
 * Create a test client to make ``pingPingRequests`` and display results.
 
-The complete ping-pong tutorial source code may be found `here <https://github.com/quant-net/quant-net-plugins/blob/develop/plugins/pingpong>`_
+The complete ping-pong tutorial source code may be found `here <https://github.com/quant-net/qn-plugins/blob/main/plugins/pingpong>`_
 
 Protocol schema
 ---------------
@@ -111,7 +111,7 @@ The ``pingPongRecord`` will serve two purposes by defining 1) the structure of d
           type: number
 
 
-The ``ping`` and ``pong`` messages are ommitted for brevity but may be found in the complete ping-pong YAML located within the `schema/ <https://github.com/quant-net/quant-net-plugins/blob/develop/plugins/schema/pingpong.yaml>`_ sub-directory.
+The ``ping`` and ``pong`` messages are ommitted for brevity but may be found in the complete ping-pong YAML located within the `schema/ <https://github.com/quant-net/qn-plugins/blob/main/plugins/schema/pingpong.yaml>`_ sub-directory.
 
 
 Controller ProtocolPlugin
@@ -182,7 +182,7 @@ Now that we have a complete schema definition, we can begin to implement the pro
             )
 
 
-The Controller plugin imports a `PingPonger <https://github.com/quant-net/quant-net-tutorials/blob/main/pingpong/pingpong/pingponger.py>`_ class that implements the ping-pong protocol logic and record management. Whenever a Controller with this plugin loaded receives a ``pingPongRequest`` it will invoke the ``handle_pingpong()`` method to begin the ping-pong protocol. The plugin also registers a ``ping`` command as a valid RPC call conforming to the specified ping-pong protocol schema.
+The Controller plugin imports a `PingPonger <https://github.com/quant-net/qn-plugins/blob/main/pingpong/pingpong/pingponger.py>`_ class that implements the ping-pong protocol logic and record management. Whenever a Controller with this plugin loaded receives a ``pingPongRequest`` it will invoke the ``handle_pingpong()`` method to begin the ping-pong protocol. The plugin also registers a ``ping`` command as a valid RPC call conforming to the specified ping-pong protocol schema.
 
 Agent Command Interpreter
 -------------------------
@@ -289,9 +289,9 @@ Using the :doc:`Quick Start<quick>` environment, an example execution of the cli
 .. code-block:: bash
     
     $ docker exec -ti controller bash
-    root@e038e8ec4071:/# cd /quant-net-plugins/plugins/pingpong/
+    root@e038e8ec4071:/# cd /qn-plugins/plugins/pingpong/
 
-    root@e038e8ec4071:/quant-net-plugins/plugins/pingpong# HOST=broker python3 test_pingpong.py
+    root@e038e8ec4071:/qn-plugins/plugins/pingpong# HOST=broker python3 test_pingpong.py
     --- LBNL-Q ping statistics ---
     5 requests made, 5 received, time 5107ms
     rtt min/avg/max/mdev 2.704/19.802/44.927/22.162 ms

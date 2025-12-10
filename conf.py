@@ -54,7 +54,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx_toolbox.shields']
 
 github_username = 'quant-net'
-github_repository = 'quant-net-server'
+github_repository = 'qn-server'
 
 bibtex_bibfiles = ['refs.bib']
 bibtex_default_style = 'unsrtalpha'
