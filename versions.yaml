@@ -1,0 +1,10 @@
+# List of released documentation versions.
+# Each entry maps a version label to its git tag.
+# Add new entries here when tagging a release.
+#
+# Example:
+#   "1.1":
+#     tag: "v1.1.0"
+#
+"1.0.0":
+  tag: "v1.0.0"

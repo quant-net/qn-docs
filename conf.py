@@ -22,6 +22,7 @@ from sphinx.application import Sphinx
 import quantnet_controller
 import os
 import sys
+import yaml
 sys.path.insert(0, os.path.abspath('..'))
 
 
@@ -115,7 +116,7 @@ html_theme = 'sphinx_rtd_theme'
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -186,3 +187,33 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
+
+
+# -- Options for versioned documentation --------------------------------
+
+# When build_all_docs is set (by build_docs.py), populate html_context
+# with version information from versions.yaml for the version selector.
+build_all_docs = os.environ.get("build_all_docs")
+pages_root = os.environ.get("pages_root", "")
+
+if build_all_docs is not None:
+    current_version = os.environ.get("current_version", "latest")
+
+    html_context = {
+        'current_version': current_version,
+        'versions': [],
+    }
+
+    # "latest" always links to the root
+    html_context['versions'].append(['latest', pages_root])
+
+    # Load additional versions from versions.yaml
+    versions_file = os.path.join(os.path.dirname(__file__), "versions.yaml")
+    if os.path.exists(versions_file):
+        with open(versions_file, "r") as yaml_file:
+            docs = yaml.safe_load(yaml_file)
+        if docs:
+            for ver in docs:
+                html_context['versions'].append(
+                    [ver, pages_root + '/' + ver]
+                )

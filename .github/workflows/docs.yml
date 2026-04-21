@@ -1,6 +1,11 @@
 name: documentation
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,23 +16,33 @@ jobs:
       pages: write
       id-token: write
     environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed to checkout version tags
+
       - uses: actions/setup-python@v5
+
       - name: Install dependencies
         run: |
-          pip install sphinx-rtd-theme sphinx-click readthedocs-sphinx-search sphinxcontrib.bibtex sphinx-toolbox quantnet-mq quantnet-agent quantnet-server
-      - name: Sphinx build
+          pip install "sphinx<9" sphinx-rtd-theme sphinx-click readthedocs-sphinx-search \
+            sphinxcontrib.bibtex sphinx-toolbox pyyaml \
+            quantnet-mq quantnet-agent quantnet-server
+
+      - name: Build versioned docs
         run: |
-          make html
+          python build_docs.py --output-dir ./pages
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/gh-pages' }}
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/gh-pages')
         with:
-          path: _build/html
+          path: ./pages
+
       - name: Deploy to GitHub Pages
         id: deployment
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/gh-pages')
         uses: actions/deploy-pages@v4
