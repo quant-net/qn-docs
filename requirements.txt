@@ -1,0 +1,15 @@
+# Sphinx and build tools
+sphinx<9
+sphinx-rtd-theme
+sphinx-click
+readthedocs-sphinx-search
+sphinxcontrib-bibtex
+sphinx-toolbox
+pyyaml
+
+# QUANT-NET packages (for autodoc introspection).
+# When building versioned docs, build_docs.py installs pinned versions
+# of these packages per release. For local dev builds, install the latest:
+quantnet-server
+quantnet-agent
+quantnet-mq
