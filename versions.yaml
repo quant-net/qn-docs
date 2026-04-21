@@ -19,3 +19,9 @@
     - "quantnet-server==1.0.0"
     - "quantnet-agent==1.0.0"
     - "quantnet-mq==1.0.0"
+"1.1.0":
+  tag: "v1.1.0"
+  packages:
+    - "quantnet-server==1.1.0"
+    - "quantnet-agent==1.1.0"
+    - "quantnet-mq==1.1.0"
