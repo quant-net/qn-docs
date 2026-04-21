@@ -208,8 +208,8 @@ if build_all_docs is not None:
         'versions': [],
     }
 
-    # "latest" always links to the root
-    html_context['versions'].append(['latest', pages_root])
+    # "latest" links to the latest subdirectory
+    html_context['versions'].append(['latest', pages_root + '/latest'])
 
     # Load additional versions from versions.yaml
     versions_file = os.path.join(os.path.dirname(__file__), "versions.yaml")

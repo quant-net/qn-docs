@@ -37,7 +37,7 @@ jobs:
 
       - name: Build versioned docs
         run: |
-          python build_docs.py --output-dir ./pages
+          python build_docs.py --pages-root /qn-docs --output-dir ./pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
