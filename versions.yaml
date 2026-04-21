@@ -1,10 +1,21 @@
 # List of released documentation versions.
-# Each entry maps a version label to its git tag.
+# Each entry maps a version label to its git tag and pinned packages.
 # Add new entries here when tagging a release.
+#
+# The 'packages' list specifies the exact pip packages to install for
+# that version so that autodoc/code introspection matches the release.
 #
 # Example:
 #   "1.1":
 #     tag: "v1.1.0"
+#     packages:
+#       - "quantnet-server==1.1.0"
+#       - "quantnet-agent==1.1.0"
+#       - "quantnet-mq==1.1.0"
 #
 "1.0.0":
   tag: "v1.0.0"
+  packages:
+    - "quantnet-server==1.0.0"
+    - "quantnet-agent==1.0.0"
+    - "quantnet-mq==1.0.0"
