@@ -1,0 +1,23 @@
+{# Version selector flyout panel, following the RTD theme convention.
+   This template is automatically picked up by sphinx_rtd_theme when
+   placed at _templates/versions.html.
+
+   The 'versions' and 'current_version' variables are populated by
+   conf.py from versions.yaml when build_all_docs is set.
+#}
+{% if versions %}
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: {{ current_version }}
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      {% for the_version, url in versions %}
+        <dd><a href="{{ url }}/index.html">{{ the_version }}</a></dd>
+      {% endfor %}
+    </dl>
+  </div>
+</div>
+{% endif %}
